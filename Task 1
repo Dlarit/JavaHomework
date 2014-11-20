@@ -1,0 +1,31 @@
+/*Задача 1:
+1. Задать массив целых чисел длинной 10 эл.
+2. Отсортировать числа в массиве
+3. Вывести на экран результат.
+4. Сделать возможность наполнения массива с клавиатуры*.*/
+
+package com.company;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TaskOne {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an ten-digital number: ");
+        long vvod = scanner.nextLong();
+        String text = Long.toString(vvod);
+        int length = text.length();
+        int i=0;
+        int x=0;
+        int[] mass = new int[10];
+        while (i<(length)) {
+            char s = text.charAt(i++);
+            int d = Character.digit(s,10);
+            mass[x++] = d;
+        }
+        Arrays.sort(mass);
+        String result = Arrays.toString(mass);
+        System.out.println("The result is " + result);
+    }
+}
